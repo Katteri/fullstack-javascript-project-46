@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import parse from './parser.js';
+import parse from './parsers.js';
 import compare from './compare.js';
 
 const getAbsolutePath = (file) => path.resolve(process.cwd(), file);
