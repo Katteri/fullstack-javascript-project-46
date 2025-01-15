@@ -13,14 +13,16 @@ function buildTree(data1, data2) {
       return { key, state: 'deleted', value: data1[key] };
     }
     if (_.isObject(data1[key]) && _.isObject(data2[key])) {
-      return { key, state: 'nested', value: buildTree(data1[key], data2[key])};
+      return { key, state: 'nested', value: buildTree(data1[key], data2[key]) };
     }
     if (!_.isEqual(data1[key], data2[key])) {
-      return { key, state: 'changed', value1: data1[key], value2: data2[key] };
+      return {
+        key, state: 'changed', value1: data1[key], value2: data2[key],
+      };
     }
 
     return { key, state: 'unchanged', value: data1[key] };
   });
-};
+}
 
 export default buildTree;

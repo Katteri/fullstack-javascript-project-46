@@ -10,7 +10,7 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
 const extensions = ['json', 'yml'];
-const correct = readFile(`correct.txt`);
+const correct = readFile('correct.txt');
 
 extensions.forEach((ext) => {
   describe('Positives cases', () => {

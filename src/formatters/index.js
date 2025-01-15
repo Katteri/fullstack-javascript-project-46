@@ -7,6 +7,6 @@ function formattedTree(data, format, replacer) {
     default:
       throw new Error(`Invalid file format type: '.${format}'! Try supported file formats.`);
   }
-};
+}
 
 export default formattedTree;
