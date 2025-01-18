@@ -10,14 +10,18 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
 const extensions = ['json', 'yml'];
-const correct = readFile('correct.txt');
+const correct = {
+  stylish: readFile('correct-stylish.txt'),
+  plain: readFile('correct-plain.txt'),
+};
 
 extensions.forEach((ext) => {
   describe('Positives cases', () => {
     test(`genDiff-${ext}`, () => {
       const file1 = getFixturePath(`file1.${ext}`);
       const file2 = getFixturePath(`file2.${ext}`);
-      expect(genDiff(file1, file2)).toEqual(correct);
+      expect(genDiff(file1, file2)).toEqual(correct.stylish);
+      expect(genDiff(file1, file2, 'plain')).toEqual(correct.plain);
     });
   });
 });
