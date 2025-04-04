@@ -11,8 +11,8 @@ Change directory to fullstack-javascript-project-46
 
 Run the command: `make install`.
 ```bash
-$ git clone git@github.com:pterodactylsam/frontend-project-lvl2.git
-$ cd frontend-project-lvl2
+$ git clone git@github.com:Katteri/fullstack-javascript-project-46.git
+$ cd fullstack-javascript-project-46
 $ make install
 ```
 
